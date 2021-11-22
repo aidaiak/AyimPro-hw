@@ -49,5 +49,5 @@ private fun String?.parseToInt(): Int {
         println("exception = $e")
         return 0
     }
-    return 0
+    return 0 // Здесь return лишний, так как используешь return try {}
 }
