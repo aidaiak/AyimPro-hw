@@ -12,7 +12,7 @@ fun main() {
     val oper = (1..rec).iterator()
 
     oper.forEach {
-        val sc = Scanner(System.`in`)
+        val sc = Scanner(System.`in`) // Scanner обязательно закрываем
         println("Enter name and phone number: ")
         val name = sc.next()
         val phone = sc.nextInt()
