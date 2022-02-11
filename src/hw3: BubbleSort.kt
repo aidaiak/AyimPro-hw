@@ -1,25 +1,29 @@
 package src
 
-fun main(args: Array<String>) {
-    val list = bubbleSort(intArrayOf(2,15,1,8,4,23,6))
-    for (k in list) print("$k ")
-}
-
-fun bubbleSort(arr:IntArray):IntArray {
+fun ArrayList<Int>.bubbleSort()
+        : ArrayList<Int>{
     var swap = true
-
-    while (swap) {
+    while(swap){
         swap = false
-        for (i in 0 until arr.size - 1) {
-            if (arr[i] > arr[i + 1]) {
-                val temp = arr[i]
-                arr[i] = arr[i + 1]
-                arr[i + 1] = temp
+        for(i in 0 until this.indices.last){
+            if(this[i] > this[i+1]){
+                val temp = this[i]
+                this[i] = this[i+1]
+                this[i + 1] = temp
 
                 swap = true
             }
         }
     }
-    return arr
+    return this
 }
+
+fun main(args: Array<String>) {
+    val list = arrayListOf(5,4,2,8,1, 45, 6)
+        .bubbleSort()
+    list.forEach{
+        println(it)
+    }
+}
+
 
